@@ -1,0 +1,15 @@
+version: "3.6"
+
+services:
+  front_dev:
+    container_name: front_dev
+    build:
+      dockerfile: _prod/develop/Dockerfile
+      context: .
+    command: >
+      bash -c "npm install && ng serve --port 80 --host 0.0.0.0"
+    volumes:
+      - .:/Front
+    ports:
+      - '80:80'
+
