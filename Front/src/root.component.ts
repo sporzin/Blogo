@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SpinnerOverlayService } from './shared/services/spinner-overlay.service';
 
 @Component({
@@ -6,13 +6,18 @@ import { SpinnerOverlayService } from './shared/services/spinner-overlay.service
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.scss'],
 })
-export class RootComponent implements OnInit {
-  public loading: boolean = false;
+export class RootComponent implements OnInit, AfterViewInit {
+  public loading: any;
   constructor(private spinnerService: SpinnerOverlayService) {
-    this.spinnerService.loading$.subscribe((result) => {
-      this.loading = result;
-    });
+    this.loading = this.spinnerService.loading$;
   }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    this.spinnerService.show();
+    setTimeout(() => {
+      this.spinnerService.hide();
+    }, 1000);
+  }
 }
