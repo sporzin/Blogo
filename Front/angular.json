@@ -34,7 +34,10 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "src/assets/custom.js"
+              "src/assets/js/jquery.sticky-sidebar.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/slick.min.js",
+              "src/assets/js/custom.js"
             ]
           },
           "configurations": {
