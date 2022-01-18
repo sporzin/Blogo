@@ -20,8 +20,8 @@
     padding: 110px 40px;
     text-align: center;
     background: #fff;
-    -webkit-box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 10 15px 15px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 10 15px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
 .notfound .notfound-404 {
@@ -45,7 +45,7 @@
 }
 
 .notfound .notfound-404 h1 > span {
-    color: #00b7ff;
+    color: #fe4f70;
 }
 
 .notfound h2 {
@@ -80,7 +80,7 @@
 }
 
 .notfound .notfound-search > input:focus {
-    border-color: #00b7ff;
+    border-color: #fe4f70;
 }
 
 .notfound .notfound-search > button {
@@ -135,11 +135,11 @@
 }
 
 .notfound .notfound-search > button:hover > span:after {
-    border-color: #00b7ff;
+    border-color: #fe4f70;
 }
 
 .notfound .notfound-search > button:hover > span:before {
-    background-color: #00b7ff;
+    background-color: #fe4f70;
 }
 
 @media only screen and (max-width: 767px) {
