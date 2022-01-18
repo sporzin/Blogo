@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -12,8 +13,13 @@ import { SpinnerOverlayService } from 'src/shared/services/spinner-overlay.servi
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let postId = 1;
+    this.http.get(`http://localhost:8000/posts/${postId}`).subscribe((res) => {
+      console.log(res);
+    });
+  }
   ngAfterViewInit(): void {}
 }
