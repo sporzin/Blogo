@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     ContactComponent,
     AboutComponent,
+    NotFoundComponent,
   ],
   imports: [CommonModule, LandingRoutingModule, SharedModule],
 })
