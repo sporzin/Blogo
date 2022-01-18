@@ -15,11 +15,6 @@ import { SpinnerOverlayService } from 'src/shared/services/spinner-overlay.servi
 export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-    let postId = 1;
-    this.http.get(`http://localhost:8000/posts/${postId}`).subscribe((res) => {
-      console.log(res);
-    });
-  }
+  ngOnInit(): void {}
   ngAfterViewInit(): void {}
 }
