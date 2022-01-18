@@ -29,6 +29,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/styles/public-styles.scss",
               "src/styles.scss"
             ],
             "scripts": [
