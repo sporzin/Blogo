@@ -7,17 +7,9 @@ import { SpinnerOverlayService } from './shared/services/spinner-overlay.service
   styleUrls: ['./root.component.scss'],
 })
 export class RootComponent implements OnInit, AfterViewInit {
-  public loading: any;
-  constructor(private spinnerService: SpinnerOverlayService) {
-    this.loading = this.spinnerService.loading$;
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    this.spinnerService.show();
-    setTimeout(() => {
-      this.spinnerService.hide();
-    }, 1000);
-  }
+  ngAfterViewInit(): void {}
 }
