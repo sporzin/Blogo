@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PublicLayoutComponent } from './public-layout/public-layout.component';
@@ -17,6 +18,11 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent,
+        pathMatch: 'prefix',
+      },
+      {
+        path: 'about-me',
+        component: AboutComponent,
         pathMatch: 'prefix',
       },
     ],

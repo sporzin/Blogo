@@ -8,6 +8,7 @@ import { PublicFooterComponent } from './shared/public-footer/public-footer.comp
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from 'src/shared/shared.module';
 import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
     PublicFooterComponent,
     HomeComponent,
     ContactComponent,
+    AboutComponent,
   ],
   imports: [CommonModule, LandingRoutingModule, SharedModule],
 })
