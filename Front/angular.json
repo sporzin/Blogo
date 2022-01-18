@@ -30,17 +30,16 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "src/assets/styles/simple-line-icons.css",
               "src/assets/styles/public-styles.scss",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/js/custom.js",
               "src/assets/js/jquery.sticky-sidebar.min.js",
               "src/assets/js/popper.min.js",
-              "src/assets/js/slick.min.js",
-              "src/assets/js/custom.js"
+              "src/assets/js/slick.min.js"
             ]
           },
           "configurations": {
