@@ -46,7 +46,11 @@
                 >
               </li>
               <li><a class="dropdown-item" href="about.html">About</a></li>
-              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/public/contact']"
+                  >Contact</a
+                >
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -147,10 +151,10 @@
           <li><a href="blog-single.html">Blog Single</a></li>
           <li><a href="blog-single-alt.html">Blog Single Alt</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a [routerLink]="['/public/contact']">Contact</a></li>
         </ul>
       </li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a [routerLink]="['/public/contact']">Contact</a></li>
     </ul>
   </nav>
 
