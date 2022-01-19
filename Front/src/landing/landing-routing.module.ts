@@ -4,7 +4,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PublicLayoutComponent } from './public-layout/public-layout.component';
-import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -27,10 +26,6 @@ const routes: Routes = [
         pathMatch: 'prefix',
       },
     ],
-  },
-  {
-    path: '**',
-    component: NotFoundComponent,
   },
 ];
 
