@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SingleAltComponent } from './single-alt/single-alt.component';
+import { SingleComponent } from './single/single.component';
 
 const routes: Routes = [
   {
@@ -8,16 +10,11 @@ const routes: Routes = [
     children: [
       {
         path: 'single',
-        loadChildren: () =>
-          import('./single/single.module').then((m) => m.SingleModule),
-        pathMatch: 'prefix',
+        component: SingleComponent,
       },
       {
         path: 'single-alt',
-        loadChildren: () =>
-          import('./single-alt/single-alt.module').then(
-            (m) => m.SingleAltModule
-          ),
+        component: SingleAltComponent,
       },
     ],
   },
