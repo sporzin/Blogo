@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClassicComponent } from './classic/classic.component';
-import { MinimalComponent } from './minimal/minimal.component';
-import { PersonalComponent } from './personal/personal.component';
 
 const routes: Routes = [
   {
