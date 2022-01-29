@@ -14,23 +14,19 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Magazine</a></li>
               <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="['/public/content/personal']"
+                <a class="dropdown-item" [routerLink]="['/contents/personal']"
                   >Personal</a
                 >
               </li>
               <li>
                 <a
                   class="dropdown-item"
-                  [routerLink]="['/public/content/personal-alt']"
+                  [routerLink]="['/contents/personal-alt']"
                   >Personal Alt</a
                 >
               </li>
               <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="['/public/contnt/minimal']"
+                <a class="dropdown-item" [routerLink]="['/contents/minimal']"
                   >Minimal</a
                 >
               </li>
@@ -156,10 +152,10 @@
         <a href="#">Home</a>
         <ul class="submenu">
           <li><a href="#">Magazine</a></li>
-          <li><a href="personal.html">Personal</a></li>
-          <li><a href="personal-alt.html">Personal Alt</a></li>
-          <li><a href="minimal.html">Minimal</a></li>
-          <li><a href="classic.html">Classic</a></li>
+          <li><a [routerLink]="['/contents/personal']">Personal</a></li>
+          <li><a [routerLink]="['/contents/personal-alt']">Personal Alt</a></li>
+          <li><a [routerLink]="['/contents/minimal']">Minimal</a></li>
+          <li><a [routerLink]="['/contents/classic']">Classic</a></li>
         </ul>
       </li>
       <li><a href="category.html">Lifestyle</a></li>
