@@ -28,7 +28,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'post',
+    path: 'posts',
     loadChildren: () => import('./post/post.module').then((m) => m.PostModule),
   },
 ];

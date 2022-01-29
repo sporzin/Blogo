@@ -5,16 +5,18 @@ import { SingleComponent } from './single/single.component';
 
 const routes: Routes = [
   {
-    path: 'posts',
-    pathMatch: 'full',
+    path: '',
+    pathMatch: 'prefix',
     children: [
       {
         path: 'single',
         component: SingleComponent,
+        pathMatch: 'full',
       },
       {
         path: 'single-alt',
         component: SingleAltComponent,
+        pathMatch: 'full',
       },
     ],
   },
