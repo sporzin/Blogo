@@ -11,11 +11,13 @@ const routes: Routes = [
   },
   {
     path: 'public',
+    pathMatch: 'prefix',
     loadChildren: () =>
       import('./landing/landing.module').then((m) => m.LandingModule),
   },
   {
     path: 'contents',
+    pathMatch: 'prefix',
     loadChildren: () =>
       import('./content/content.module').then((m) => m.ContentModule),
   },
