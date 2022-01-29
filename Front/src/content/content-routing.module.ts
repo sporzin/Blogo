@@ -6,30 +6,30 @@ import { PersonalComponent } from './personal/personal.component';
 
 const routes: Routes = [
   {
-    path: 'content',
-    children: [
-      {
-        path: 'classic',
-        component: ClassicComponent,
-      },
-      {
-        path: 'minimal',
-        component: MinimalComponent,
-      },
-      {
-        path: 'personal',
-        component: PersonalComponent,
-      },
-      {
-        path: 'personal-alt',
-        component: PersonalComponent,
-      },
-      {
-        path: 'posts',
-        loadChildren: () =>
-          import('./post/post.module').then((m) => m.PostModule),
-      },
-    ],
+    path: 'classic',
+    loadChildren: () =>
+      import('./classic/classic.module').then((m) => m.ClassicModule),
+  },
+  {
+    path: 'minimal',
+    loadChildren: () =>
+      import('./minimal/minimal.module').then((m) => m.MinimalModule),
+  },
+  {
+    path: 'personal',
+    loadChildren: () =>
+      import('./personal/personal.module').then((m) => m.PersonalModule),
+  },
+  {
+    path: 'personal-alt',
+    loadChildren: () =>
+      import('./personal-alt/personal-alt.module').then(
+        (m) => m.PersonalAltModule
+      ),
+  },
+  {
+    path: 'post',
+    loadChildren: () => import('./post/post.module').then((m) => m.PostModule),
   },
 ];
 
