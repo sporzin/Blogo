@@ -22,5 +22,6 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
     NotFoundComponent,
   ],
   imports: [CommonModule, LandingRoutingModule, SharedModule],
+  exports: [PublicHeaderComponent, PublicFooterComponent],
 })
 export class LandingModule {}

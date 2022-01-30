@@ -38,6 +38,12 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a class="nav-link text-primary" [routerLink]="['/account']"
+              >Login</a
+            >
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" href="category.html">Lifestyle</a>
           </li>
           <li class="nav-item">
@@ -112,10 +118,6 @@
           <button class="burger-menu icon-button">
             <span class="burger-icon"></span>
           </button>
-
-          <button class="btn">
-            <span>Profile</span>
-          </button>
         </div>
       </div>
     </div>
@@ -158,6 +160,7 @@
   <!-- menu -->
   <nav>
     <ul class="vertical-menu">
+      <li><a [routerLink]="['/account']">Login</a></li>
       <li class="active">
         <a href="#">Home</a>
         <ul class="submenu">
