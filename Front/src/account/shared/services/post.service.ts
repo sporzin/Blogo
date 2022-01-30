@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SharedModule } from 'src/shared/shared.module';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: SharedModule,
 })
 export class PostService {
   constructor(private httpPost: HttpClient) {}
