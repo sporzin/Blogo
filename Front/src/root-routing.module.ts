@@ -22,6 +22,12 @@ const routes: Routes = [
       import('./content/content.module').then((m) => m.ContentModule),
   },
   {
+    path: 'account',
+    pathMatch: 'prefix',
+    loadChildren: () =>
+      import('./account/account.module').then((m) => m.AccountModule),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
