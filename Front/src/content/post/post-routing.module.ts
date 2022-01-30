@@ -10,12 +10,16 @@ const routes: Routes = [
     children: [
       {
         path: 'single',
-        component: SingleComponent,
+        loadChildren: () =>
+          import('./single/single.module').then((m) => m.SingleModule),
         pathMatch: 'full',
       },
       {
         path: 'single-alt',
-        component: SingleAltComponent,
+        loadChildren: () =>
+          import('./single-alt/single-alt.module').then(
+            (m) => m.SingleAltModule
+          ),
         pathMatch: 'full',
       },
     ],
