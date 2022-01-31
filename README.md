@@ -1,5 +1,5 @@
 # Blogo
-Way to crate Blog
+Way to create Blog
 ## Development
 
 ### Back-End
