@@ -1,5 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  Event,
+  NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Route,
+  Router,
+  RouterModule,
+  Routes,
+} from '@angular/router';
+import { NgxSpinnerService, Spinner } from 'ngx-spinner';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
@@ -33,4 +44,26 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class LandingRoutingModule {}
+export class LandingRoutingModule {
+  constructor(router: Router, spinnerService: NgxSpinnerService) {
+    const spinnerConfig: Spinner = {
+      showSpinner: true,
+      bdColor: 'red',
+      color: 'green',
+      fullScreen: true,
+      size: 'medium',
+      type: 'ball-fall',
+      zIndex: 999,
+    };
+    router.events.subscribe((e: Event) => {
+      if (e instanceof NavigationStart) {
+        spinnerService.show();
+      }
+      if (e instanceof NavigationEnd || NavigationCancel || NavigationError) {
+        setTimeout(() => {
+          spinnerService.hide();
+        }, 1500);
+      }
+    });
+  }
+}
