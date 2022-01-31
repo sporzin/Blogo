@@ -1,15 +1,11 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { SpinnerOverlayService } from './shared/services/spinner-overlay.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.scss'],
 })
-export class RootComponent implements OnInit, AfterViewInit {
+export class RootComponent implements OnInit {
   constructor() {}
-
   ngOnInit(): void {}
-
-  ngAfterViewInit(): void {}
 }
