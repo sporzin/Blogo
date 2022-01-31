@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session
 
 from models.posts import Post as MPost
 from schemas.posts import PostCreate
-from models.users import User
 
 
 def create_post(db: Session, post: PostCreate):
