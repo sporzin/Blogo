@@ -10,14 +10,6 @@ import { PostService } from './services/post.service';
   declarations: [],
   imports: [CommonModule, SharedModule],
   exports: [SharedModule],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthService,
-      multi: true,
-    },
-    GetService,
-    PostService,
-  ],
+  providers: [AuthService, GetService, PostService],
 })
 export class AccountSharedModule {}
