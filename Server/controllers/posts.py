@@ -7,12 +7,13 @@ from schemas.posts import PostCreate, Post
 from crud.posts import read_post_by_id, create_post
 from crud.users import read_user
 from src.util import get_db
+from controllers.auth import oauth2_scheme
 
 PostsRouter = APIRouter(prefix="/posts", tags=["Posts"])
 
 
 @PostsRouter.get("/{post_id}", response_model=Post)
-def read_post(post_id: int, db: Session = Depends(get_db)):
+def read_post(post_id: int, token: str = Depends(oauth2_scheme),  db: Session = Depends(get_db)):
     """
     main to just say hello!
     :return:

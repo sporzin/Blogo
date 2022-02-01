@@ -28,4 +28,3 @@ def _create_user(user: UserCreate, db: Session = Depends(get_db)):
     Creating user
     """
     return create_user(db, user)
-

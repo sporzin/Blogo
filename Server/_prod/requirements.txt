@@ -6,3 +6,6 @@ SQLAlchemy-ImageAttach
 python-dotenv
 psycopg2-binary
 pytest
+python-multipart
+passlib[bcrypt]
+python-jose

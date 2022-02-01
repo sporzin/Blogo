@@ -4,6 +4,7 @@ Blogo main Server file
 from fastapi import FastAPI
 from controllers.posts import PostsRouter
 from controllers.users import UserRouter
+from controllers.auth import AuthRouter
 from src.db import engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -26,3 +27,4 @@ Blogo.add_middleware(
 
 Blogo.include_router(PostsRouter)
 Blogo.include_router(UserRouter)
+Blogo.include_router(AuthRouter)
