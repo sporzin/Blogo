@@ -12,21 +12,23 @@
 
                 <p class="text-muted mt-2 mb-5">Enter Your Information</p>
 
-                <form>
+                <form [formGroup]="registerForm">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label for="email">Email address</label>
                     <input
                       type="email"
                       class="form-control"
-                      id="exampleInputEmail1"
+                      id="email"
+                      formControlName="email"
                     />
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Full Name</label>
+                    <label for="name">Full Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="exampleInputEmail1"
+                      id="name"
+                      formControlName="name"
                     />
                   </div>
                   <div class="form-group mb-5">
@@ -35,20 +37,23 @@
                       type="password"
                       class="form-control"
                       id="exampleInputPassword1"
+                      formControlName="password"
                     />
                   </div>
-                  <div class="form-group mb-5">
-                    <label for="exampleInputPassword1"
-                      >Repeat Your Password</label
-                    >
+                  <div class="form-group mb-5 d-none">
+                    <label for="repeat-password">Repeat Your Password</label>
                     <input
                       type="password"
                       class="form-control"
-                      id="exampleInputPassword1"
+                      id="repeat-password"
                     />
                   </div>
                   <span class="d-flex w-100 justify-content-between">
-                    <button type="submit" class="btn btn-theme">
+                    <button
+                      type="submit"
+                      class="btn btn-theme"
+                      (click)="register()"
+                    >
                       Register
                     </button>
                   </span>

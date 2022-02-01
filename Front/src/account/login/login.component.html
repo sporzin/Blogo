@@ -14,14 +14,14 @@
                   Enter your email address and password to access admin panel.
                 </p>
 
-                <form [formGroup]="formGroup">
+                <form [formGroup]="loginForm">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input
                       type="email"
                       class="form-control"
                       id="exampleInputEmail1"
-                      [formControl]="username"
+                      formControlName="username"
                     />
                   </div>
                   <div class="form-group mb-5">
@@ -30,7 +30,7 @@
                       type="password"
                       class="form-control"
                       id="exampleInputPassword1"
-                      [formControl]="password"
+                      formControlName="password"
                     />
                   </div>
                   <span class="d-flex w-100 justify-content-between">

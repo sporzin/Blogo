@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AccountComponent,
-    pathMatch: 'full',
     children: [
       {
         path: '',
-        component: LoginComponent,
+        redirectTo: 'login',
+        pathMatch: 'full',
+      },
+
+      {
+        path: 'login',
+        loadChildren: () =>
+          import('./login/login.module').then((m) => m.LoginModule),
       },
       {
         path: 'register',
@@ -19,16 +24,20 @@ const routes: Routes = [
           import('./register/register.module').then((m) => m.RegisterModule),
       },
       {
-        path: 'password',
+        path: 'password-reset',
         loadChildren: () =>
           import('./password/password.module').then((m) => m.PasswordModule),
       },
       {
-        path: 'email-activation',
+        path: 'confirm-email',
         loadChildren: () =>
           import('./email-activation/email-activation.module').then(
             (m) => m.EmailActivationModule
           ),
+      },
+      {
+        path: '**',
+        redirectTo: 'login',
       },
     ],
   },
