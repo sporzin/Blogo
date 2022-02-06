@@ -25,7 +25,7 @@ export class AuthService {
 
     return this.token_valid().pipe(
       map((res) => {
-        return !res;
+        return !!res;
       })
     )
 
