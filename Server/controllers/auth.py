@@ -9,7 +9,7 @@ from passlib.context import CryptContext
 from models import User
 from sqlalchemy.orm import Session
 
-from schemas import TokenData, Token, User as UserSchema
+from schemas import TokenData, Token, User as UserSchema, Login as LoginSchema
 from src.setting import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 from src.util import get_db
 
@@ -18,6 +18,16 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 AuthRouter = APIRouter(prefix="/auth", tags=["auth"])
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
+
+
+class OAuth2ReqUserPassword(OAuth2PasswordRequestForm):
+    def __init__(
+            self,
+            username: str,
+            password: str,
+    ):
+        self.username = username
+        self.password = password
 
 
 def verify_password(plain_password, hashed_password):
@@ -83,8 +93,8 @@ async def get_current_active_user(current_user=Depends(get_current_user)):
 
 
 @AuthRouter.post("/token", response_model=Token)
-async def login_for_access_token(db: Session = Depends(get_db), form_data: OAuth2PasswordRequestForm = Depends()):
-    user = authenticate_user(db, form_data.username, form_data.password)
+async def login_for_access_token(login: LoginSchema, db: Session = Depends(get_db),):
+    user = authenticate_user(db, login.username, login.password)
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
