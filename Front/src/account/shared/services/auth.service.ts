@@ -18,9 +18,9 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
 
-  is_authenticated(): boolean |Observable<boolean> {
+  is_authenticated(): Observable<boolean> {
     if (!this.token_exist()){
-      return false;
+      return of(false);
     }
 
     return this.token_valid().pipe(
