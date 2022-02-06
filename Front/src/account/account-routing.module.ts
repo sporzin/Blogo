@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
+import {AuthGuard} from "./shared/services/auth.guard";
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
 
       {
         path: 'login',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('./login/login.module').then((m) => m.LoginModule),
       },
@@ -46,5 +48,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [AuthGuard],
 })
 export class AccountRoutingModule {}
