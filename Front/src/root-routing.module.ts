@@ -13,11 +13,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./landing/landing.module').then((m) => m.LandingModule),
   },
-  {
-    path: 'contents',
-    loadChildren: () =>
-      import('./content/content.module').then((m) => m.ContentModule),
-  },
+
   {
     path: 'account',
     loadChildren: () =>
