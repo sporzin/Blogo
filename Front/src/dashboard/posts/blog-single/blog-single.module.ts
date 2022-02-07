@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BlogSingleComponent } from './blog-single.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BlogSingleComponent
+  ],
   imports: [
     CommonModule
   ]

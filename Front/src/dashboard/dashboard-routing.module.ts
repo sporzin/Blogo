@@ -7,7 +7,10 @@ const routes: Routes = [
     children: [
       {
         path: 'blog-single',
-        loadChildren: () => import('./posts/blog-single/blog-single.module'),
+        loadChildren: () =>
+          import('./posts/blog-single/blog-single.module').then(
+            (m) => m.BlogSingleModule
+          ),
       },
     ],
   },
