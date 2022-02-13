@@ -6,16 +6,14 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
 import { CreatePostModalComponent } from './create-post-modal/create-post-modal.component';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     DashboardHeaderComponent,
-    CreatePostModalComponent
+    CreatePostModalComponent,
   ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule
-  ]
+  imports: [CommonModule, CKEditorModule, DashboardRoutingModule],
 })
-export class DashboardModule { }
+export class DashboardModule {}
