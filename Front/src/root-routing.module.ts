@@ -13,15 +13,17 @@ const routes: Routes = [
     loadChildren: () =>
       import('./landing/landing.module').then((m) => m.LandingModule),
   },
-  {
-    path: 'contents',
-    loadChildren: () =>
-      import('./content/content.module').then((m) => m.ContentModule),
-  },
+
   {
     path: 'account',
     loadChildren: () =>
       import('./account/account.module').then((m) => m.AccountModule),
+  },
+
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: '**',

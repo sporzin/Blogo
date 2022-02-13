@@ -12,9 +12,8 @@ import { SpinnerOverlayService } from 'src/shared/services/spinner-overlay.servi
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit, AfterViewInit {
-  constructor(private http: HttpClient) {}
+export class HomeComponent implements OnInit {
+  constructor() {}
 
   ngOnInit(): void {}
-  ngAfterViewInit(): void {}
 }

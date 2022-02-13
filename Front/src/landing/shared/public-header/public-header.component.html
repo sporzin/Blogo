@@ -37,14 +37,24 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isLoggedIn">
             <a class="nav-link text-primary" [routerLink]="['/account']"
               >Login</a
             >
           </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link text-primary" (click)="logOut()" role="button"
+              >Logout</a
+            >
+          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="category.html">Lifestyle</a>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a
+              class="nav-link text-primary"
+              [routerLink]="['/dashboard']"
+              role="button"
+              >Dashboard</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="category.html">Inspiration</a>
@@ -160,7 +170,13 @@
   <!-- menu -->
   <nav>
     <ul class="vertical-menu">
-      <li><a [routerLink]="['/account']">Login</a></li>
+      <li *ngIf="!isLoggedIn"><a [routerLink]="['/account']">Login</a></li>
+      <li *ngIf="isLoggedIn">
+        <a [routerLink]="['/account']" class="text-primary">Logout</a>
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a [routerLink]="['/dashboard']" class="text-primary">Dashboard</a>
+      </li>
       <li class="active">
         <a href="#">Home</a>
         <ul class="submenu">

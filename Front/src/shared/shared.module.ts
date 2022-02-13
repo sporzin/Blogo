@@ -4,6 +4,7 @@ import { SpinnerComponent } from './common/components/spinner/spinner.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [SpinnerComponent],
@@ -13,7 +14,14 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    NgbModule,
   ],
-  exports: [ReactiveFormsModule, FormsModule, HttpClientModule, RouterModule],
+  exports: [
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule,
+    NgbModule,
+  ],
 })
 export class SharedModule {}
