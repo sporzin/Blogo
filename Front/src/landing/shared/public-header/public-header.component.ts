@@ -8,18 +8,26 @@ import { AuthService } from 'src/account/shared/services/auth.service';
   styleUrls: ['./public-header.component.scss'],
 })
 export class PublicHeaderComponent implements OnInit {
-  isLoggedIn: boolean = false;
+  private _isLoggedIn: boolean = false;
+
+  public get isLoggedIn(): boolean {
+    return this._isLoggedIn;
+  }
+  public set isLoggedIn(value: boolean) {
+    this._isLoggedIn = value;
+  }
+
   constructor(private authService: AuthService) {
     this.authService.is_authenticated().subscribe((result) => {
-      this.isLoggedIn = result;
+      this._isLoggedIn = result;
     });
   }
 
   ngOnInit(): void {}
 
   logOut() {
-    this.authService.logout();
     this.isLoggedIn = false;
+    this.authService.logout();
     window.location.reload();
   }
 }

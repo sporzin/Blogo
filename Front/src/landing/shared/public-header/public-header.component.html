@@ -167,7 +167,13 @@
   <!-- menu -->
   <nav>
     <ul class="vertical-menu">
-      <li><a [routerLink]="['/account']">Login</a></li>
+      <li *ngIf="!isLoggedIn"><a [routerLink]="['/account']">Login</a></li>
+      <li *ngIf="isLoggedIn">
+        <a [routerLink]="['/account']" class="text-primary">Logout</a>
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a [routerLink]="['/account']" class="text-primary">Dashboard</a>
+      </li>
       <li class="active">
         <a href="#">Home</a>
         <ul class="submenu">
